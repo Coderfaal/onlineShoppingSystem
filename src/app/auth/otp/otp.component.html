@@ -1,0 +1,16 @@
+<h2>Verify OTP</h2>
+
+<form [formGroup]="otpForm" (ngSubmit)="submit()">
+
+  <div>
+    <label>Enter OTP</label><br />
+    <input type="text" formControlName="otp">
+  </div>
+
+  <p style="color:red" *ngIf="error">{{ error }}</p>
+
+  <button type="submit" [disabled]="loading">
+    {{ loading ? 'Verifying...' : 'Verify OTP' }}
+  </button>
+
+</form>
